@@ -1,12 +1,21 @@
-*{
+* {
     box-sizing: border-box;
-    margin: auto;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
 }
 
 body{
-    background-color: #f0f0f0;
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
 }
+
 .parent {
+
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(3, 1fr);
@@ -15,7 +24,7 @@ body{
     }
     
     .div1 { grid-area: 2 / 2 / 3 / 3; }
-    .div2 { grid-area: 1 / 1 / 4 / 2; }
+    .div2 { grid-area: 1 / 1 / 4 / 2; display: flex; flex-direction: column; justify-content: center; }
     .div3 { grid-area: 3 / 2 / 4 / 3; }
     .div4 { grid-area: 1 / 2 / 2 / 5; }
     .div5 { grid-area: 2 / 3 / 3 / 4; }
@@ -27,14 +36,101 @@ body{
     width: 100%;
     height: 100%;
     padding: 15px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .div2{
     height: 100vh;
 }
-.content{
-    background-color: white;
-    height: 100%;
-    border-radius: 10px;
+.div2 .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+input, button {
+    width: 80%;
     padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+input {
+    width: 80%;
+    padding: 10px;
+    border: none;
+    border-bottom: 2px solid #ccc; /* Solo borde inferior */
+    border-radius: 0; /* Elimina bordes redondeados */
+    font-size: 16px;
+    background-color: transparent; /* Hace el fondo transparente */
+    outline: none; /* Elimina el borde al hacer clic */
+}
+
+input:focus {
+    border-bottom: 2px solid #007bff; /* Cambia el color del borde inferior al enfocar */
+}
+
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#locationInfo {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+}
+.content{
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+#map {
+    width: 100%;
+    height: 300px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.contentDivs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.icon {
+    font-size: 3rem;
+    margin-bottom: 5px;
+}
+
+.label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.value {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
 }
